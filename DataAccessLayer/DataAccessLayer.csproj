@@ -59,6 +59,12 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
+    <Compile Include="EntityFramework\EFAboutDal.cs" />
+    <Compile Include="EntityFramework\EFCategoryDal.cs" />
+    <Compile Include="EntityFramework\EFContactDal.cs" />
+    <Compile Include="EntityFramework\EFContentDal.cs" />
+    <Compile Include="EntityFramework\EFHeadingDal.cs" />
+    <Compile Include="EntityFramework\EFWriterDal.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Migrations\202411120937369_mig1.cs" />
     <Compile Include="Migrations\202411120937369_mig1.Designer.cs">
