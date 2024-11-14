@@ -16,7 +16,7 @@ namespace ThoughtHive
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Category", action = "GetCategoryList", id = UrlParameter.Optional }
+                defaults: new { controller = "AdminCategory", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

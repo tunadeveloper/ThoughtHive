@@ -45,5 +45,24 @@ namespace ThoughtHive.Controllers
             }
             return View();
         }
+
+        public ActionResult DeleteCategory(int id)
+        {
+            var value = cM.GetByIDBL(id);
+            cM.CategoryDeleteBL(value);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult UpdateCategory(int id) {
+           var value = cM.GetByIDBL(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(Category category)
+        {
+            cM.CategoryUpdateBL(category);
+            return RedirectToAction("Index");
+        }
     }
 }
