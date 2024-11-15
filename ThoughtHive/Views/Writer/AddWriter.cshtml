@@ -24,7 +24,7 @@
 
                     @Html.Label("Yazar E-Posta")
                     @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
-                   @Html.ValidationMessageFor(x => x.WriterMail)
+                    @Html.ValidationMessageFor(x => x.WriterMail)
 
                     <br />
 
@@ -40,12 +40,18 @@
 
                     <br />
 
+                    @Html.Label("Yazar Ünvanı")
+                    @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.WriterTitle)
+
+                    <br />
+
                     @Html.Label("Yazar Hakkında")
                     @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.WriterAbout)
 
-                <br />
+                    <br />
 
-                <button class="btn btn-success">Yazarı Ekle</button>
+                    <button class="btn btn-success">Yazarı Ekle</button>
                 </div>
             }

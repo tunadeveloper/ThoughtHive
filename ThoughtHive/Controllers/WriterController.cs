@@ -15,6 +15,7 @@ namespace ThoughtHive.Controllers
     public class WriterController : Controller
     {
         WriterManager wM = new WriterManager(new EFWriterDal());
+        WriterValidator validator = new WriterValidator();
         // GET: Writer
         public ActionResult Index()
         {
@@ -28,9 +29,24 @@ namespace ThoughtHive.Controllers
             return View(value);
         }
 
+        [HttpPost]
         public ActionResult UpdateWriter(Writer writer)
         {
-            wM.WriterUpdateBL(writer);
+            ValidationResult results = validator.Validate(writer);
+            if (results.IsValid)
+            {
+                wM.WriterUpdateBL(writer);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+
             return RedirectToAction("Index");
         }
 
@@ -49,7 +65,7 @@ namespace ThoughtHive.Controllers
         [HttpPost]
         public ActionResult AddWriter(Writer writer)
         {
-            WriterValidator validator = new WriterValidator();
+
             ValidationResult results = validator.Validate(writer);
             if (results.IsValid)
             {
@@ -65,5 +81,7 @@ namespace ThoughtHive.Controllers
             }
             return View();
         }
+
+
     }
 }
