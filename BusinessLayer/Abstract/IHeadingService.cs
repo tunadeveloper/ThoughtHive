@@ -11,7 +11,8 @@ namespace BusinessLayer.Abstract
     {
         List<Heading> GetList();
         void HeadingAddBL(Heading heading);
-        void HeadingDeleteBL(Heading heading);
+        void HeadingPassiveBL(Heading heading);
+        void HeadingActiveBL(Heading heading);
         void HeadingUpdateBL(Heading heading);
         Heading GetByID(int id);
     }

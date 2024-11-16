@@ -51,5 +51,47 @@ namespace ThoughtHive.Controllers
             headingManager.HeadingAddBL(heading);
             return RedirectToAction("Index", "Heading");
         }
+
+
+        public ActionResult EditHeading(int id)
+        {
+
+            List<SelectListItem> category = (from x in categoryManager.GetList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = x.CategoryName,
+                                                 Value = x.CategoryID.ToString()
+                                             }).ToList();
+            ViewBag.category = category;
+            var value = headingManager.GetByID(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult EditHeading(Heading heading)
+        {
+
+            headingManager.HeadingUpdateBL(heading);
+            return RedirectToAction("Index", "Heading");
+        }
+
+        public ActionResult PassiveHeading(int id)
+        {
+            var value = headingManager.GetByID(id);
+            value.HeadingStatus = false;
+            headingManager.HeadingPassiveBL(value);
+            return RedirectToAction("Index", "Heading");
+
+        }
+
+
+        public ActionResult ActiveHeading(int id)
+        {
+            var value = headingManager.GetByID(id);
+            value.HeadingStatus = true;
+            headingManager.HeadingActiveBL(value);
+            return RedirectToAction("Index", "Heading");
+        }
+
     }
 }

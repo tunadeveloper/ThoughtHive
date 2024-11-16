@@ -29,16 +29,20 @@ namespace BusinessLayer.Concrete
             return _headingDal.List();
         }
 
+        public void HeadingActiveBL(Heading heading)
+        {
+            _headingDal.Update(heading);
+        }
+
         public void HeadingAddBL(Heading heading)
         {
             _headingDal.Insert(heading);
         }
 
-        public void HeadingDeleteBL(Heading heading)
+        public void HeadingPassiveBL(Heading heading)
         {
-            _headingDal.Delete(heading);
+            _headingDal.Update(heading);
         }
-
         public void HeadingUpdateBL(Heading heading)
         {
             _headingDal.Update(heading);
