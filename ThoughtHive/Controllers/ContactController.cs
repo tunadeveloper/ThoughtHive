@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
+using DataAccessLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +12,19 @@ namespace ThoughtHive.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
+        ContactManager manager = new ContactManager(new EFContactDal());
+        ContactValidator validator = new ContactValidator();
         public ActionResult Index()
         {
-            return View();
+            var values = manager.GetListBL();
+            return View(values);
+        }
+
+        public ActionResult GetContactDetails(int id)
+
+        {
+            var values = manager.GetByIDBL(id);
+            return View(values);  
         }
     }
 }
