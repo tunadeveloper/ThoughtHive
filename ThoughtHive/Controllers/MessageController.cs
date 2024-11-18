@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,24 @@ namespace ThoughtHive.Controllers
         MessageManager manager = new MessageManager(new EFMessageDal());
         public ActionResult Inbox()
         {
-            var values = manager.GetListBL();
+            var values = manager.GetListInboxBL();
             return View(values);
+        }
+        public ActionResult Sendbox()
+        {
+            var values = manager.GetListSendboxBL();
+            return View(values);
+        }
+
+        public ActionResult CreateMessage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateMessage(Message message)
+        {
+            return View();
         }
     }
 }
