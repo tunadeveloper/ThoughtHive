@@ -26,5 +26,11 @@ namespace ThoughtHive.Controllers
             var values = manager.GetByIDBL(id);
             return View(values);  
         }
+
+        public PartialViewResult PartialMenu()
+        {
+            return PartialView();
+
+        }
     }
 }
