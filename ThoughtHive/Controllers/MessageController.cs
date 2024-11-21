@@ -29,6 +29,18 @@ namespace ThoughtHive.Controllers
             return View();
         }
 
+        public ActionResult GetInboxMessageDetails(int id)
+        {
+            var values = manager.GetByIDBL(id);
+            return View(values);
+        }
+
+        public ActionResult GetSendboxMessageDetails(int id)
+        {
+            var values = manager.GetByIDBL(id);
+            return View(values);
+        }
+
         [HttpPost]
         public ActionResult CreateMessage(Message message)
         {

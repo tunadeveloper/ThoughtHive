@@ -77,7 +77,7 @@
                                             <b>@item.Subject</b> - @(item.Message.Length > 30 ? item.Message.Substring(0,30) + "..." : item.Message)
                                         </td>
                                         <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date">5 mins ago</td>
+                                        <td class="mailbox-date">@item.ContactDate.ToString("HH:mm | dd MMM")</td>
                                     </tr>
                                     }
                                 </tbody>
