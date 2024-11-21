@@ -1,6 +1,6 @@
 ﻿﻿@model EntityLayer.Concrete.Message
 @{
-    ViewBag.Title = "GetSendboxMessageDetails";
+    ViewBag.Title = "GetInboxMessageDetails";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
 }
 
@@ -37,8 +37,8 @@
                                 <h5>Konu: @Html.DisplayFor(x => x.Subject)</h5>
                                 <br />
                                 <h6>
-                                    Alıcı: @Html.DisplayFor(x => x.ReceiverMail)
-                                    <span class="mailbox-read-time float-right"> @(Model.MessageDate.ToString("dd MMM yyyy"))</span>
+                                    Kimden: @Html.DisplayFor(x => x.SenderMail)
+                                    <span class="mailbox-read-time float-right"> @(Model.MessageDate.ToString("dd/MMMMM/yyyy"))</span>
                                 </h6>
                             </div>
                             <br />

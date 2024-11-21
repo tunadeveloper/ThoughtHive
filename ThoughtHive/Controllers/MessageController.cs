@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace ThoughtHive.Controllers
     {
         // GET: Message
         MessageManager manager = new MessageManager(new EFMessageDal());
+        MessageValidator validator = new MessageValidator();
         public ActionResult Inbox()
         {
             var values = manager.GetListInboxBL();
@@ -44,6 +47,19 @@ namespace ThoughtHive.Controllers
         [HttpPost]
         public ActionResult CreateMessage(Message message)
         {
+           ValidationResult results = validator.Validate(message);
+            if (results.IsValid)
+            {
+                manager.MessageAddBL(message);
+                return RedirectToAction("Sendbox");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
     }
