@@ -103,6 +103,10 @@
     <Compile Include="Migrations\202411210933094_mig12.Designer.cs">
       <DependentUpon>202411210933094_mig12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411221606591_mig13.cs" />
+    <Compile Include="Migrations\202411221606591_mig13.Designer.cs">
+      <DependentUpon>202411221606591_mig13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Migrations\202411120937369_mig1.cs" />
     <Compile Include="Migrations\202411120937369_mig1.Designer.cs">
@@ -158,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411210933094_mig12.resx">
       <DependentUpon>202411210933094_mig12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411221606591_mig13.resx">
+      <DependentUpon>202411221606591_mig13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

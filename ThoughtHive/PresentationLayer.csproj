@@ -141,6 +141,8 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
@@ -1984,6 +1986,10 @@
     <Content Include="Admin\plugins\toastr\toastr.min.css" />
     <Content Include="Admin\plugins\toastr\toastr.min.js" />
     <Content Include="Admin\starter.html" />
+    <Content Include="colorlib-error-404-10\css\style.css" />
+    <Content Include="colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="colorlib-error-404-10\index.html" />
+    <Content Include="colorlib-error-404-10\readme.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -2311,6 +2317,8 @@
     <Content Include="Views\Message\CreateMessage.cshtml" />
     <Content Include="Views\Message\GetSendboxMessageDetails.cshtml" />
     <Content Include="Views\Message\GetInboxMessageDetails.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

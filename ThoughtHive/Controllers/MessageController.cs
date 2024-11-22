@@ -50,7 +50,7 @@ namespace ThoughtHive.Controllers
            ValidationResult results = validator.Validate(message);
             if (results.IsValid)
             {
-                message.MessageDate = DateTime.Now;
+                message.MessageDate = DateTime.Parse(DateTime.Now.ToString());
                 manager.MessageAddBL(message);
                 return RedirectToAction("Sendbox");
             }
