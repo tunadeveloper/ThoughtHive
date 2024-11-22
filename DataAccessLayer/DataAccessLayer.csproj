@@ -52,19 +52,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="EntityFramework\EFAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EFCategoryDal.cs" />
     <Compile Include="EntityFramework\EFContactDal.cs" />
     <Compile Include="EntityFramework\EFContentDal.cs" />
     <Compile Include="EntityFramework\EFHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EFMessageDal.cs" />
     <Compile Include="EntityFramework\EFWriterDal.cs" />
     <Compile Include="Migrations\202411141407404_mig3.cs" />
@@ -106,6 +110,10 @@
     <Compile Include="Migrations\202411221606591_mig13.cs" />
     <Compile Include="Migrations\202411221606591_mig13.Designer.cs">
       <DependentUpon>202411221606591_mig13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411221657087_mig14.cs" />
+    <Compile Include="Migrations\202411221657087_mig14.Designer.cs">
+      <DependentUpon>202411221657087_mig14.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Migrations\202411120937369_mig1.cs" />
@@ -165,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411221606591_mig13.resx">
       <DependentUpon>202411221606591_mig13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411221657087_mig14.resx">
+      <DependentUpon>202411221657087_mig14.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

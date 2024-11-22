@@ -1,4 +1,4 @@
-﻿
+﻿@model List<EntityLayer.Concrete.ImageFile>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_adminLayout.cshtml";
@@ -25,37 +25,71 @@
 </head>
 <body class="hold-transition sidebar-mini">
 
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Gallery</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Gallery</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <div class="card card-primary">
-
+                        <div class="card-header">
+                            <div class="card-title">
+                                Ekko Lightbox
+                            </div>
+                        </div>
                         <div class="card-body">
                             <div class="row">
-                                @foreach (var item in Model)
-                                {
-                                    <div class="col-sm-3" style="margin-bottom:1%">
-                                        <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
-                                            <img src="@item.ImagePath" style="width:100%;height:100%" class="img-fluid mb-2" alt="white sample" />
-                                        </a>
-                                    </div>
+                                @foreach(var item in Model) {
+                                <div class="col-sm-2">
+                                    <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
+                                        <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" />
+                                    </a>
+                                </div>
                                 }
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div><!-- /.container-fluid -->
     </section>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- ./wrapper -->
+    <!-- jQuery -->
     <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
     <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery UI -->
     <script src="~/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Ekko Lightbox -->
     <script src="~/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+    <!-- AdminLTE App -->
     <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <!-- Filterizr-->
     <script src="~/AdminLTE-3.0.4/plugins/filterizr/jquery.filterizr.min.js"></script>
+    <!-- Page specific script -->
     <script>
     $(function () {
             $(document).on('click', '[data-toggle="lightbox"]', function (event) {

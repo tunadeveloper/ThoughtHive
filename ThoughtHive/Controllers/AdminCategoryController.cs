@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace ThoughtHive.Controllers
 {
+    [Authorize]
     public class AdminCategoryController : Controller
     {
         CategoryManager cM = new CategoryManager(new EFCategoryDal());
