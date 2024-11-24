@@ -1,1 +1,1 @@
-## ThoughtHive - Düşünce Kovanı | Ekşi Sözlük
+## ThoughtHive - Düşünce Kovanı 
