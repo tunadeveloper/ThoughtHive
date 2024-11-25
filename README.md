@@ -1,1 +1,1 @@
-## ThoughtHive - Düşünce Kovanı 
+## ThoughtHive - Düşünce Kovani
