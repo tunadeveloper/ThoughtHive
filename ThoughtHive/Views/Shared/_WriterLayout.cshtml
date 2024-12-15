@@ -40,10 +40,10 @@ to get the desired effect
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/Admin/dist/img/2.png" class="img-circle elevation-2" alt="User Image" />
+                        <img src="@Session["WriterImage"]" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Admin Sayfası</a>
+                        <a href="#" class="d-block">@Session["WriterName"]</a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
@@ -51,113 +51,51 @@ to get the desired effect
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
-                        @if (User.IsInRole("2")) {
                         <li class="nav-item has-treeview">
-                            <a href="/AdminCategory/Index" class="nav-link">
+                            <a href="/WriterPanel/WriterProfile" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Kategoriler
+                                    Profilim
                                 </p>
                             </a>
                         </li>
-                        }
                         <li class="nav-item">
-                            <a href="/Heading/Index" class="nav-link">
+                            <a href="/WriterPanel/MyHeading" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Başlıklar
+                                    Başlıklarım
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/Content/GetAllContent" class="nav-link">
-                                <i class="nav-icon fas fa-book-reader"></i>
+                            <a href="/WriterPanel/MyHeading/" class="nav-link">
+                                <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
-                                    Yazılar
+                                    Tüm Başlıklar
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Writer/Index" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
-                                <p>
-                                    Yazarlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Chart/Index" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Grafikler
 
-                                </p>
-                            </a>
-
-                        </li>
                         <li class="nav-item has-treeview">
-                            <a href="/AdminStatistic/Index" class="nav-link">
-                                <i class="nav-icon fas fa-star"></i>
-                                <p>
-                                    İstatistikler
-                                </p>
-                            </a>
-
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/About/Index" class="nav-link">
-                                <i class="nav-icon fas fa-tree"></i>
-                                <p>
-                                    Hakkımızda
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Heading/HeadingReport" class="nav-link">
-                                <i class="nav-icon fas fa-bars"></i>
-                                <p>
-                                    Raporlar
-                                </p>
-                            </a>
-
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Contact/Index" class="nav-link">
+                            <a href="/WriterPanelMessage/Inbox" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
-                                    İletişim & Mesajlar
+                                    Mesajlar
                                 </p>
                             </a>
 
                         </li>
 
-                        @if (User.IsInRole("A"))
-                        {
-                            <li class="nav-item">
-                                <a href="/Authorization/Index" class="nav-link">
-                                    <i class="nav-icon fas fa-calendar-alt"></i>
-                                    <p>
-                                        Yetkilendirmeler
-                                    </p>
-                                </a>
-                            </li>
-                        }
+
                         <li class="nav-item">
-                            <a href="/Gallery/Index" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                            <a href="/WriterPanelContent/MyContent" class="nav-link">
+                                <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
-                                    Galeri
+                                    Yazılarım
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/ErrorPage/Page404" class="nav-link">
-                                <i class="nav-icon far fa-envelope"></i>
-                                <p>
-                                    Hata Sayfaları
-                                </p>
-                            </a>
-                        </li>
+
                         <li class="nav-item has-treeview">
                             <a href="/ProfileCard/Index" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
@@ -177,7 +115,7 @@ to get the desired effect
 
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Login/LogOut" class="nav-link">
+                            <a href="/Login/WriterLogout" class="nav-link">
                                 <i class="nav-icon fas fa-door-closed"></i>
                                 <p>
                                     Çıkış Yap
@@ -185,13 +123,20 @@ to get the desired effect
                             </a>
                     </ul>
                 </nav>
+                <!-- /.sidebar-menu -->
             </div>
+            <!-- /.sidebar -->
         </aside>
+        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+            <!-- Main content -->
             <div class="content">
                 @RenderBody()
+                <!-- /.container-fluid -->
             </div>
+            <!-- /.content -->
         </div>
+        <!-- /.content-wrapper -->
     </div>
     <script src="~/Admin/plugins/jquery/jquery.min.js"></script>
     <script src="~/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

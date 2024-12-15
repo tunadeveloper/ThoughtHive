@@ -16,12 +16,12 @@
 
         <br />
 
-        @Html.Label("Kategori ID")
+        @Html.Label("Kategori")
         @Html.DropDownListFor(x=>x.CategoryID, (List<SelectListItem>)ViewBag.category, new { @class = "form-control"})
 
         <br />
 
-        @Html.Label("Yazar ID")
+        @Html.Label("Yazar")
        @Html.DropDownListFor(x=>x.WriterID, (List<SelectListItem>)ViewBag.writer, new {@class = "form-control"})
 
         <br />

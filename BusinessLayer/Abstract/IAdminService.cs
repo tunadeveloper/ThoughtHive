@@ -10,5 +10,6 @@ namespace BusinessLayer.Abstract
     public interface IAdminService 
     {
         Admin GetAdmin(string username, string password);
+        string GetRoleProvider(string username);
     }
 }
