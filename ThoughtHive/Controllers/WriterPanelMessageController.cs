@@ -21,5 +21,18 @@ namespace ThoughtHive.Controllers
             var values = manager.GetListInboxBL();
             return View(values);
         }
+
+        public ActionResult Sendbox()
+        {
+            var values = manager.GetListSendboxBL();
+            return View(values);
+        }
+
+        public PartialViewResult MessageListMenu()
+        {
+            return PartialView();
+        }
+
+
     }
 }
